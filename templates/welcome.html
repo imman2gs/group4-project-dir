@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,15 +13,20 @@
         <div class="hero-content">
             <h1>GROUP 4 TRAVELS</h1>
             <p>Your journey begins here. Discover the world's most breathtaking destinations.</p>
+
+            <div class="auth-buttons">
+
                 <!-- 
                     TO MAKE THE BUTTONS WORK, we wrap the button styling around
                     an <a> tag, and use Flask's url_for() function to link 
                     to the corresponding Python function in app.py. 
                 -->
+
                 <!-- Register Button -->
                 <a href="{{ url_for('register') }}" class="btn btn-register">
                     Register
                 </a>
+
                 <!-- Login Button -->
                 <a href="{{ url_for('login') }}" class="btn btn-login">
                     Login
