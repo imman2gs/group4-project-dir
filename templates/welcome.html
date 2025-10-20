@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GROUP 4 - Explore the World</title>
+    <!-- Link to your CSS using Flask's dynamic path -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/welcome.css') }}">
 </head>
 <body>
@@ -14,9 +15,22 @@
             <p>Your journey begins here. Discover the world's most breathtaking destinations.</p>
             
             <div class="auth-buttons">
-                <button class="btn btn-register">Register</button>
                 
-                <button class="btn btn-login">Login</button>
+                <!-- 
+                    TO MAKE THE BUTTONS WORK, we wrap the button styling around
+                    an <a> tag, and use Flask's url_for() function to link 
+                    to the corresponding Python function in app.py. 
+                -->
+                
+                <!-- Register Button -->
+                <a href="{{ url_for('register') }}" class="btn btn-register">
+                    Register
+                </a>
+                
+                <!-- Login Button -->
+                <a href="{{ url_for('login') }}" class="btn btn-login">
+                    Login
+                </a>
             </div>
         </div>
     </header>
@@ -40,7 +54,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 GROUP 4 Advanced Programming.</p>
+        <p>&copy; 2025 GROUP 4 Advanced Programming. Explore. Dream. Discover.</p>
     </footer>
 
 </body>
