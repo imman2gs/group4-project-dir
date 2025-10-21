@@ -175,3 +175,13 @@ body, html {
         padding: 12px;
     }
 }
+
+footer {
+    background-color: #789ec5; /* Solid color matching the requested hex */
+    color: white;
+    text-align: center;
+    padding: 20px 0; /* Updated padding */
+    font-size: 0.9rem; /* Updated font size */
+    width: 100%;
+    /* Removed: position: fixed; bottom: 0; left: 0; z-index: 5; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
+}

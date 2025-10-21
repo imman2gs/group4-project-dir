@@ -4,39 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-
-    <link rel="stylesheet" href="..\static\css\login.css">
-    <link rel="stylesheet" href="C:\Users\User\Desktop\Production\group4-project-dir\static\css\login.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 </head>
 <body>
     <div class="login-container">
-    <div class="login-box">
-        
-        
-        <form>
-            <div class="input-group">
-                <label for="username">Email</label>
-                <input type="email" id="username" >
-            </div>
+        <div class="login-box">
             
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" >
-            </div>
+            <form action="/handle-login" method="post">
+                <div class="input-group">
+                    <label for="username">Email</label>
+                    <input type="email" id="username" name="username" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <button type="submit" class="login-button">
+                    Log In
+                </button>
+            </form>
             
-            <button type="submit" class="login-button">
-                Log In
-            </button>
-        </form>
-        
-        <div class="link-section">
-            <a href="#">Forgot your password?</a>
-            <span>•</span>
-            <p>No Account? <a href="#"><strong>Sign Up Here</strong></a></p>
+            <div class="link-section">
+                <a href="#">Forgot your password?</a>
+                <span>•</span>
+                <p>No Account? <a href="{{ url_for('register') }}"><strong>Sign Up Here</strong></a></p>
+                <p><a href="{{ url_for('welcome') }}">Back to Home Page</a></p>
+            </div>
         </div>
+        
     </div>
-    
-</div>
+
+    <footer>
+        <p>&copy; SY. 2025 - 2026 GROUP 4 Advanced Programming. DIT 3-2.</p>
+    </footer>
+
 </body>
 </html>
-

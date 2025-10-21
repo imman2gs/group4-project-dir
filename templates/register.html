@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
 </head>
 <body>
 
-    <h1>Registration</h1>
-
     <form action="/submit-registration" method="post"> 
+        
+        <h1>Registration</h1>
 
         <div>
             <label for="username">Username:</label>
@@ -49,6 +50,11 @@
 
         <div>
             <button type="submit">Register</button>
+        </div>
+        
+        <div class="back-link">
+            <p>Already have an account? <a href="{{ url_for('login') }}">Login Here</a></p>
+            <p><a href="{{ url_for('welcome') }}" class="home-link">Back to Home Page</a></p>
         </div>
 
     </form>
