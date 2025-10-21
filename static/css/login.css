@@ -1,21 +1,33 @@
-/*
- * --- CREATIVE ISLAND PORTAL DESIGN V3 ---
- * Emerald/Sunlight palette complementing the tropical Kayangan Lake image.
- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-/* Define Colors using CSS variables for easy updates */
 :root {
-    --color-primary-emerald: #00a878; /* Bright Emerald Green for accents */
-    --color-secondary-sunlight: #ffc658; /* Sunlight Yellow for buttons/focus */
+    --color-primary-emerald: #009688;
+    --color-secondary-sunlight: #ffc107;
+    --color-dark-emerald: #00564d;
+    --color-login-button: #789ec5;
+    --color-link-hover: #5088c7;
+    --glass-bg-color: rgba(255, 255, 255, 0.2); 
+    --glass-border-color: rgba(255, 255, 255, 0.6);
+    --glass-blur: 20px;
+
+:root {
+    --color-primary-emerald: #00a878;
+    --color-secondary-sunlight: #ffc658; 
     --color-dark-emerald: #007a56;
-    /* Soft light background for the glass effect */
     --color-light-background-start: rgba(255, 255, 255, 0.95);
     --color-light-background-end: rgba(240, 248, 255, 0.9);
 }
 
 body, html {
-    height: 100%;
     margin: 0;
+    font-family: 'Inter', sans-serif; 
+    color: var(--color-dark-emerald); 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
     /* Using Inter for modern, clean typography */
     font-family: 'Inter', sans-serif; 
     color: #333; 
@@ -24,10 +36,10 @@ body, html {
 }
 
 .login-container {
-    height: 100%;
+    flex: 1; 
+    
     width: 100%;
     
-    /* Set initial zoom level for panning */
     background-size: 110%; 
     background-repeat: no-repeat; 
     background-image: url('kayangan_lake_coron.jpg');
@@ -36,18 +48,24 @@ body, html {
     display: flex;
     justify-content: center; 
     align-items: center; 
+    position: relative;
     
-    /* Darken effect for contrast */
+    padding: 40px 0;
+    box-sizing: border-box; 
+    
+    background-image: url('https://a0.muscache.com/im/pictures/INTERNAL/INTERNAL-ImageByPlaceId-ChIJEfqjPuomlDMRevfQkx9Q-6U-large_background/original/fd8f6b23-e76b-46b6-8ede-57d2559d800d.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.45); 
+    background-blend-mode: darken; 
+    
     background-color: rgba(0, 0, 0, 0.45); 
     background-blend-mode: darken;
     
-    /* --- SIMPLE VERTICAL PAN ANIMATION (40 seconds loop, continuous) --- */
     animation: simplePan 40s infinite alternate; 
 }
 
-/* Keyframes for the simple vertical pan effect (top to bottom movement) */
 @keyframes simplePan {
-    /* Start State: Top position, using the single specified image */
     0% { 
         background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/45/09/2c/kayangan-lake-dubbed.jpg?w=1200&h=-1&s=1');
         background-position: center top; 
@@ -62,76 +80,76 @@ body, html {
 
 
 .login-box {
-    /* Glass effect background with subtle gradient */
     background: linear-gradient(135deg, var(--color-light-background-start), var(--color-light-background-end)); 
     padding: 45px 50px; 
     border-radius: 20px; 
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6); /* Bolder shadow for depth */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6); 
     width: 400px; 
     max-width: 90%; 
     text-align: center;
     
-    /* Glassmorphism effect refinement */
-    backdrop-filter: blur(18px); /* Stronger blur */
+    backdrop-filter: blur(18px); 
     -webkit-backdrop-filter: blur(18px); 
-    border: 3px solid rgba(255, 255, 255, 0.6); /* Clearer white border defining the glass */
+    border: 3px solid rgba(255, 255, 255, 0.6); 
 }
 
 .login-box h1 {
     font-family: 'Georgia', serif; 
-    color: var(--color-primary-emerald); /* Emerald Title */
+    color: var(--color-primary-emerald);
     font-size: 2.8em; 
     margin: 0 0 35px 0; 
     letter-spacing: 1px;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.1); 
 }
 
-.login-box .greeting {
-    color: #4a5568; /* Darker grey for greeting */
+    color: #4a5568; 
     font-size: 1em; 
     margin-bottom: 10px; 
     font-style: italic;
     background-color: rgba(0, 0, 0, 0.4);
     background-blend-mode: darken;
     
-    animation: panBackground 30s infinite alternate; 
 }
 
-@keyframes panBackground {
-    0% { background-position: center top; }
-    100% { background-position: center bottom; }
-}
+
+
 
 .login-box {
-    background: rgba(255, 255, 255, 0.9); 
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    width: 380px;
-    max-width: 90%;
+    padding: 40px 45px; 
+    width: 400px; 
+    max-width: 90%; 
     text-align: center;
     
-    backdrop-filter: blur(10px); 
-    -webkit-backdrop-filter: blur(10px); 
+    background: var(--glass-bg-color); 
+    border: 1px solid var(--glass-border-color); 
+    border-radius: 20px; 
+    backdrop-filter: blur(var(--glass-blur)); 
+    -webkit-backdrop-filter: blur(var(--glass-blur)); 
+    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
 }
 
-
 .login-box h1 {
-    font-family: 'Georgia', serif; 
-    color: #007bff; 
-    font-size: 2.5em;
-    margin: 10px 0 30px 0;
+    font-family: 'Inter', sans-serif; 
+    color: white; 
+    font-size: 2.5em; 
+    margin: 0 0 35px 0; 
     letter-spacing: 1px;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.8); 
 }
 
 .login-box .greeting {
-    color: #6c757d;
-    font-size: 1.1em;
-    margin-bottom: 5px;
+    color: white;
+    font-size: 1em; 
+    margin-bottom: 20px; 
+    font-style: italic;
+    border-bottom: 2px solid var(--color-primary-emerald);
+    padding-bottom: 5px;
 }
 
 .input-group {
     text-align: left;
+    margin-bottom: 20px; 
     margin-bottom: 22px; 
     margin-bottom: 20px;
 }
@@ -143,116 +161,102 @@ body, html {
     color: var(--color-dark-emerald); /* Dark Emerald Label */
     font-size: 0.95em;
     margin-bottom: 5px;
-    font-weight: bold;
-    color: #007bff; 
+    font-weight: 600; 
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
     font-size: 0.9em;
 }
 
 .input-group input {
     width: 100%;
-    padding: 14px; 
+    padding: 12px; 
     border: 1px solid #ddd;
-    border-radius: 10px; 
+    border-radius: 8px; 
     box-sizing: border-box; 
+    background-color: rgba(255, 255, 255, 0.95);
     transition: border-color 0.3s, box-shadow 0.3s;
-    background-color: #f7f7f7; 
 }
 
 .input-group input:focus {
-    border-color: var(--color-secondary-sunlight); /* Sunlight Yellow Focus */
+    border-color: var(--color-login-button); 
     outline: none;
-    box-shadow: 0 0 12px rgba(255, 198, 88, 0.8); 
-    background-color: #fff; 
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-sizing: border-box; 
-    transition: border-color 0.3s;
-}
-
-.input-group input:focus {
-    border-color: #ffc107; 
-    outline: none;
-    box-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
+    box-shadow: 0 0 10px rgba(120, 158, 197, 0.8); 
 }
 
 .login-button {
     width: 100%;
-    padding: 18px; 
-    background-color: var(--color-secondary-sunlight); /* Sunlight Button */
-    color: var(--color-dark-emerald); /* Text is deep green */
-    font-size: 1.3em; 
-    font-weight: bold;
+    padding: 15px; 
+    background-color: var(--color-login-button);
+    color: white;
+    font-size: 1.2em; 
+    font-weight: 700;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    margin-top: 20px; 
-    transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
-    box-shadow: 0 6px 15px rgba(255, 198, 88, 0.5); 
+    margin-top: 25px; 
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 5px 15px rgba(120, 158, 197, 0.5); 
 }
 
 .login-button:hover {
-    background-color: #ffdb8f; 
-    transform: translateY(-3px); 
-    box-shadow: 0 10px 25px rgba(255, 198, 88, 0.9); /* Bolder lift on hover */
+    background-color: var(--color-login-button); 
+    transform: translateY(-2px); 
+    box-shadow: 0 8px 20px rgba(120, 158, 197, 0.8);
 }
 
 .login-button:active {
-    transform: translateY(-1px); 
-    box-shadow: 0 2px 5px rgba(255, 198, 88, 0.4);
+    transform: translateY(0); 
+    box-shadow: 0 4px 10px rgba(120, 158, 197, 0.4);
 }
-
-.link-section {
-    margin-top: 30px;
-    font-size: 0.95em;
-}
-
-.link-section a {
-    color: var(--color-primary-emerald); /* Emerald Link */
-    padding: 15px;
-    background-color: #ffc107; 
-    color: #007bff; 
-    font-size: 1.2em;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s, transform 0.1s;
-}
-
-.login-button:hover {
-    background-color: #ffdb58; 
-    transform: translateY(-1px); 
-}
-
 
 .link-section {
     margin-top: 25px;
     font-size: 0.9em;
+    color: white;
 }
 
 .link-section a {
-    color: #007bff; 
+    color: white;
     text-decoration: none;
-    transition: color 0.3s;
+    font-weight: 600;
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
 .link-section a:hover {
-    color: var(--color-dark-emerald);
-    color: #0056b3;
-    text-decoration: underline;
+    color: var(--color-link-hover);
+    text-decoration: none;
+    text-shadow: 0 0 8px var(--color-link-hover);
 }
 
 .background-caption {
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
+    right: 10px; 
     color: white; 
-    font-size: 1em;
-    text-shadow: 0 0 8px rgba(0, 0, 0, 0.9); 
-    background-color: rgba(0, 0, 0, 0.3); 
+    font-size: 0.85em;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8); 
     padding: 5px 10px;
-    border-radius: 5px;
 }
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7); 
+
+@media (max-width: 500px) {
+    .login-box {
+        padding: 30px 25px;
+    }
+
+    .login-box h1 {
+        font-size: 2em;
+    }
+    
+    .login-button {
+        font-size: 1.1em;
+        padding: 12px;
+    }
+}
+
+footer {
+    background-color: #789ec5;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
 }

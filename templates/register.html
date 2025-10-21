@@ -4,54 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
 </head>
 <body>
 
-    <h1>Registration</h1>
-
-    <form action="/submit-registration" method="post"> 
-
-        <div>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-        </div>
-
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-
-        <div>
-            <label for="confirm_password">Confirm Password:</label>
-            <input type="password" id="confirm_password" name="confirm_password" required>
-        </div>
+    <main class="register-container">
         
-        <div>
-            <label for="gender">Gender:</label>
-            <select id="gender" name="gender">
-                <option value="" selected disabled>Select...</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="nonbinary">Non-binary</option>
-                <option value="other">Other</option>
-            </select>
-        </div>
+        <form action="/submit-registration" method="post"> 
+            
+            <h1>Registration</h1>
+
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div>
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+            </div>
+            
+            <div>
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="" selected disabled>Select...</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="nonbinary">Non-binary</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div>
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the <a href="#">Terms and Conditions</a>.</label>
+            </div>
+
+            <div>
+                <button type="submit">Register</button>
+            </div>
+            
+            <div class="back-link">
+                <p>Already have an account? <a href="{{ url_for('login') }}">Login Here</a></p>
+                <p><a href="{{ url_for('welcome') }}" class="home-link">Back to Home Page</a></p>
+            </div>
+
+        </form>
         
-        <div>
-            <input type="checkbox" id="terms" name="terms" required>
-            <label for="terms">I agree to the <a href="#">Terms and Conditions</a>.</label>
-        </div>
-
-        <div>
-            <button type="submit">Register</button>
-        </div>
-
-    </form>
+    </main> <footer>
+        <p>&copy; SY. 2025 - 2026 GROUP 4 Advanced Programming. DIT 3-2.</p>
+    </footer>
 
 </body>
 </html>
