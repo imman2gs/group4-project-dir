@@ -9,36 +9,36 @@
 </head>
 <body>
     <div class="login-container">
-    <div class="login-box">
-        
-        
-        <form>
-            <div class="input-group">
-                <label for="username">Email</label>
-                <input type="email" id="username" >
-            </div>
+        <div class="login-box">
             
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" >
-            </div>
+            <form>
+                <div class="input-group">
+                    <label for="username">Email</label>
+                    <input type="email" id="username" >
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" >
+                </div>
+                
+                <button type="submit" class="login-button">
+                    Log In
+                </button>
+            </form>
             
-            <button type="submit" class="login-button">
-                Log In
-            </button>
-        </form>
-        
-        <div class="link-section">
-            <a href="#">Forgot your password?</a>
-            <span>•</span>
-            <p>No Account? <a href="#"><strong>Sign Up Here</strong></a></p>
+            <div class="link-section">
+                <a href="#">Forgot your password?</a>
+                <span>•</span>
+                <p>No Account? <a href="{{ url_for('register') }}"><strong>Sign Up Here</strong></a></p>
+            </div>
         </div>
-    </div>
+        
+        </div>
     
-    <div class="background-caption">
-        <p>The Philippines: It’s more than an island, it's an adventure.</p>
-    </div>
-</div>
+    <footer>
+        <p>&copy; SY. 2025 - 2026 GROUP 4 Advanced Programming. DIT 3-2.</p>
+    </footer>
+
 </body>
 </html>
-
