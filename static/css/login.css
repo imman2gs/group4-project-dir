@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+    --color-primary-emerald: #009688;
+    --color-secondary-sunlight: #ffc107;
+    --color-dark-emerald: #00564d;
+    --color-login-button: #789ec5;
+    --color-link-hover: #5088c7;
+    --glass-bg-color: rgba(255, 255, 255, 0.2); 
+    --glass-border-color: rgba(255, 255, 255, 0.6);
+    --glass-blur: 20px;
+
+:root {
+    --color-primary-emerald: #00a878;
+    --color-secondary-sunlight: #ffc658; 
+    --color-dark-emerald: #007a56;
+    --color-light-background-start: rgba(255, 255, 255, 0.95);
+    --color-light-background-end: rgba(240, 248, 255, 0.9);
+}
+
+body, html {
+    margin: 0;
+    font-family: 'Inter', sans-serif; 
+    color: var(--color-dark-emerald); 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    /* Using Inter for modern, clean typography */
+    font-family: 'Inter', sans-serif; 
+    color: #333; 
+    /* Prevent default scroll issues on mobile */
+    overflow: hidden; 
+}
+
+.login-container {
+    flex: 1; 
+    
+    width: 100%;
+    
+    background-size: 110%; 
+    background-repeat: no-repeat; 
+    background-image: url('kayangan_lake_coron.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    position: relative;
+    
+    padding: 40px 0;
+    box-sizing: border-box; 
+    
+    background-image: url('https://a0.muscache.com/im/pictures/INTERNAL/INTERNAL-ImageByPlaceId-ChIJEfqjPuomlDMRevfQkx9Q-6U-large_background/original/fd8f6b23-e76b-46b6-8ede-57d2559d800d.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.45); 
+    background-blend-mode: darken; 
+    
+    background-color: rgba(0, 0, 0, 0.45); 
+    background-blend-mode: darken;
+    
+    animation: simplePan 40s infinite alternate; 
+}
+
+@keyframes simplePan {
+    0% { 
+        background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/45/09/2c/kayangan-lake-dubbed.jpg?w=1200&h=-1&s=1');
+        background-position: center top; 
+    }
+
+    /* End State: Bottom position */
+    100% { 
+        background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/45/09/2c/kayangan-lake-dubbed.jpg?w=1200&h=-1&s=1'); 
+        background-position: center bottom; 
+    }
+}
+
+
+.login-box {
+    background: linear-gradient(135deg, var(--color-light-background-start), var(--color-light-background-end)); 
+    padding: 45px 50px; 
+    border-radius: 20px; 
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6); 
+    width: 400px; 
+    max-width: 90%; 
+    text-align: center;
+    
+    backdrop-filter: blur(18px); 
+    -webkit-backdrop-filter: blur(18px); 
+    border: 3px solid rgba(255, 255, 255, 0.6); 
+}
+
+.login-box h1 {
+    font-family: 'Georgia', serif; 
+    color: var(--color-primary-emerald);
+    font-size: 2.8em; 
+    margin: 0 0 35px 0; 
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.1); 
+}
+
+    color: #4a5568; 
+    font-size: 1em; 
+    margin-bottom: 10px; 
+    font-style: italic;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: darken;
+    
+}
+
+
+
+
+.login-box {
+    padding: 40px 45px; 
+    width: 400px; 
+    max-width: 90%; 
+    text-align: center;
+    
+    background: var(--glass-bg-color); 
+    border: 1px solid var(--glass-border-color); 
+    border-radius: 20px; 
+    backdrop-filter: blur(var(--glass-blur)); 
+    -webkit-backdrop-filter: blur(var(--glass-blur)); 
+    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
+}
+
+.login-box h1 {
+    font-family: 'Inter', sans-serif; 
+    color: white; 
+    font-size: 2.5em; 
+    margin: 0 0 35px 0; 
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.8); 
+}
+
+.login-box .greeting {
+    color: white;
+    font-size: 1em; 
+    margin-bottom: 20px; 
+    font-style: italic;
+    border-bottom: 2px solid var(--color-primary-emerald);
+    padding-bottom: 5px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px; 
+    margin-bottom: 22px; 
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px; 
+    font-weight: 600; 
+    color: var(--color-dark-emerald); /* Dark Emerald Label */
+    font-size: 0.95em;
+    margin-bottom: 5px;
+    font-weight: 600; 
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+    font-size: 0.9em;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px; 
+    border: 1px solid #ddd;
+    border-radius: 8px; 
+    box-sizing: border-box; 
+    background-color: rgba(255, 255, 255, 0.95);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--color-login-button); 
+    outline: none;
+    box-shadow: 0 0 10px rgba(120, 158, 197, 0.8); 
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px; 
+    background-color: var(--color-login-button);
+    color: white;
+    font-size: 1.2em; 
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 25px; 
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 5px 15px rgba(120, 158, 197, 0.5); 
+}
+
+.login-button:hover {
+    background-color: var(--color-login-button); 
+    transform: translateY(-2px); 
+    box-shadow: 0 8px 20px rgba(120, 158, 197, 0.8);
+}
+
+.login-button:active {
+    transform: translateY(0); 
+    box-shadow: 0 4px 10px rgba(120, 158, 197, 0.4);
+}
+
+.link-section {
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: white;
+}
+
+.link-section a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.link-section a:hover {
+    color: var(--color-link-hover);
+    text-decoration: none;
+    text-shadow: 0 0 8px var(--color-link-hover);
+}
+
+.background-caption {
+    position: absolute;
+    bottom: 10px;
+    right: 10px; 
+    color: white; 
+    font-size: 0.85em;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8); 
+    padding: 5px 10px;
+}
+
+@media (max-width: 500px) {
+    .login-box {
+        padding: 30px 25px;
+    }
+
+    .login-box h1 {
+        font-size: 2em;
+    }
+    
+    .login-button {
+        font-size: 1.1em;
+        padding: 12px;
+    }
+}
+
+footer {
+    background-color: #789ec5;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}

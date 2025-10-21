@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAMPLE TITLE</title>
+    <title>GROUP 4 - Explore the World</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/welcome.css') }}">
 </head>
 <body>
-    <h1>SAMPLE HEADING 1</h1>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>GROUP 4 TRAVELS</h1>
+            <p>Your journey begins here. Discover the world's most breathtaking destinations.</p>
+            
+            <div class="auth-buttons">
+                
+                <a href="{{ url_for('register') }}" class="btn btn-register">
+                    Register
+                </a>
+                
+                <a href="{{ url_for('login') }}" class="btn btn-login">
+                    Login
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <footer>
+        <p>&copy; SY. 2025 - 2026 GROUP 4 Advanced Programming. DIT 3-2.</p>
+    </footer>
+
 </body>
 </html>
