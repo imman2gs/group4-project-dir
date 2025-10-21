@@ -14,14 +14,19 @@
             <p>Your journey begins here. Discover the world's most breathtaking destinations.</p>
             
             <div class="auth-buttons">
-                <button class="btn btn-register">Register</button>
                 
-                <button class="btn btn-login">Login</button>
+                <a href="{{ url_for('register') }}" class="btn btn-register">
+                    Register
+                </a>
+                
+                <a href="{{ url_for('login') }}" class="btn btn-login">
+                    Login
+                </a>
             </div>
         </div>
     </header>
 
-    <main class="info-section">
+    <!-- <main class="info-section">
         <h2>Why Choose Us?</h2>
         <div class="features">
             <div class="feature-item">
@@ -37,10 +42,10 @@
                 <p>Travel confidently with our around-the-clock assistance.</p>
             </div>
         </div>
-    </main>
+    </main> -->
 
     <footer>
-        <p>&copy; 2025 GROUP 4 Advanced Programming.</p>
+        <p>&copy; SY. 2025 - 2026 GROUP 4 Advanced Programming. DIT 3-2.</p>
     </footer>
 
 </body>
