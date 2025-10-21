@@ -1,23 +1,13 @@
-/*
- * --- CORON ISLAND PORTAL DESIGN ---
- * Emerald/Sunlight palette complementing the tropical Kayangan Lake theme.
- * Focus: Clean Glassmorphism, subtle background movement, high contrast.
- */
-
-/* --- 1. Global Setup and Variables --- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 :root {
-    /* Original Color Palette (Keeping Emerald for subtle accents) */
-    --color-primary-emerald: #009688;     /* Teal/Emerald for subtle accents */
-    --color-secondary-sunlight: #ffc107;  /* Keeping this variable but not used in buttons */
-    --color-dark-emerald: #00564d;        /* Dark text color */
+    --color-primary-emerald: #009688;
+    --color-secondary-sunlight: #ffc107;
+    --color-dark-emerald: #00564d;
     
-    /* NEW Login Button Color */
-    --color-login-button: #789ec5;      /* Serene Blue-Grey */
-    --color-link-hover: #5088c7;        /* A slightly brighter blue for link hover */
+    --color-login-button: #789ec5;
+    --color-link-hover: #5088c7;
     
-    /* Glassmorphism Settings */
     --glass-bg-color: rgba(255, 255, 255, 0.2); 
     --glass-border-color: rgba(255, 255, 255, 0.6);
     --glass-blur: 20px;
@@ -31,7 +21,6 @@ body, html {
     overflow: hidden; 
 }
 
-/* --- 2. Background and Container --- */
 .login-container {
     height: 100%;
     width: 100%;
@@ -40,38 +29,32 @@ body, html {
     align-items: center; 
     position: relative;
     
-    /* Background Image setup */
     background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/45/09/2c/kayangan-lake-dubbed.jpg?w=1200&h=-1&s=1');
     background-size: cover;
     background-repeat: no-repeat;
     background-color: rgba(0, 0, 0, 0.45); 
     background-blend-mode: darken; 
     
-    /* Animation Initialization */
     animation: simplePan 40s infinite alternate linear; 
 }
 
-/* Keyframes for the subtle background pan effect */
 @keyframes simplePan {
     0% { background-position: center top; }
     100% { background-position: center bottom; }
 }
 
-/* --- 3. Login Box (Glassmorphism Portal) --- */
 .login-box {
     padding: 40px 45px; 
     width: 400px; 
     max-width: 90%; 
     text-align: center;
     
-    /* Glass Effect */
     background: var(--glass-bg-color); 
     border: 1px solid var(--glass-border-color); 
     border-radius: 20px; 
     backdrop-filter: blur(var(--glass-blur)); 
     -webkit-backdrop-filter: blur(var(--glass-blur)); 
     
-    /* Visual Depth */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
 }
 
@@ -85,7 +68,7 @@ body, html {
 }
 
 .login-box .greeting {
-    color: white; /* Changed text color to white */
+    color: white;
     font-size: 1em; 
     margin-bottom: 20px; 
     font-style: italic;
@@ -93,7 +76,6 @@ body, html {
     padding-bottom: 5px;
 }
 
-/* --- 4. Input Fields --- */
 .input-group {
     text-align: left;
     margin-bottom: 20px; 
@@ -103,7 +85,7 @@ body, html {
     display: block;
     margin-bottom: 5px;
     font-weight: 600; 
-    color: white; /* Changed label color to white */
+    color: white;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
     font-size: 0.9em;
 }
@@ -119,19 +101,16 @@ body, html {
 }
 
 .input-group input:focus {
-    /* Updated border color to match the new button/focus color */
     border-color: var(--color-login-button); 
     outline: none;
-    /* CHANGED: box-shadow to blue-grey (#789ec5) with 0.8 opacity */
     box-shadow: 0 0 10px rgba(120, 158, 197, 0.8); 
 }
 
-/* --- 5. Login Button (CTA) --- */
 .login-button {
     width: 100%;
     padding: 15px; 
-    background-color: var(--color-login-button); /* Changed to #789ec5 */
-    color: white; /* Changed button text color to white */
+    background-color: var(--color-login-button);
+    color: white;
     font-size: 1.2em; 
     font-weight: 700;
     border: none;
@@ -139,12 +118,10 @@ body, html {
     cursor: pointer;
     margin-top: 25px; 
     transition: all 0.2s ease-in-out;
-    /* Adjusted shadow to match new blue color */
     box-shadow: 0 5px 15px rgba(120, 158, 197, 0.5); 
 }
 
 .login-button:hover {
-    /* Removed custom hover color as requested, but kept the animation for user feedback */
     background-color: var(--color-login-button); 
     transform: translateY(-2px); 
     box-shadow: 0 8px 20px rgba(120, 158, 197, 0.8);
@@ -155,27 +132,25 @@ body, html {
     box-shadow: 0 4px 10px rgba(120, 158, 197, 0.4);
 }
 
-/* --- 6. Link Section (Register/Forgot Password) --- */
 .link-section {
     margin-top: 25px;
     font-size: 0.9em;
-    color: white; /* Ensure surrounding text (like "No Account?") is white */
+    color: white;
 }
 
 .link-section a {
-    color: white; /* Changed link color to white */
+    color: white;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s, text-shadow 0.3s;
 }
 
 .link-section a:hover {
-    color: var(--color-link-hover); /* Blue hover color */
-    text-decoration: none; /* No underline on hover for cleaner look */
-    text-shadow: 0 0 8px var(--color-link-hover); /* Blue highlight effect */
+    color: var(--color-link-hover);
+    text-decoration: none;
+    text-shadow: 0 0 8px var(--color-link-hover);
 }
 
-/* Background Caption (Optional) */
 .background-caption {
     position: absolute;
     bottom: 10px;
@@ -186,7 +161,6 @@ body, html {
     padding: 5px 10px;
 }
 
-/* --- 7. Responsive Design (Mobile First) --- */
 @media (max-width: 500px) {
     .login-box {
         padding: 30px 25px;
