@@ -6,17 +6,26 @@
     --color-dark-emerald: #00564d;        
     --color-login-button: #789ec5;      
     --color-link-hover: #5088c7;        
-    
     --glass-bg-color: rgba(255, 255, 255, 0.2); 
     --glass-border-color: rgba(255, 255, 255, 0.6);
     --glass-blur: 20px;
 }
 
 body, html {
-    height: 100%;
     margin: 0;
     font-family: 'Inter', sans-serif; 
     color: var(--color-dark-emerald); 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.register-container {
+    flex: 1; 
+    
     overflow-y: auto;
     overflow-x: hidden;
     background-color: rgba(0, 0, 0, 0.45); 
@@ -31,9 +40,10 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    min-height: 100vh;
     padding: 50px 0;
+    box-sizing: border-box;
 }
+
 
 form {
     padding: 30px 45px;
@@ -50,6 +60,7 @@ form {
     -webkit-backdrop-filter: blur(var(--glass-blur)); 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
 }
+
 
 h1 {
     font-family: 'Inter', sans-serif; 
@@ -149,9 +160,10 @@ button:active {
 }
 
 @media (max-width: 480px) {
-    body {
+    
+    .register-container {
         align-items: flex-start;
-        padding-top: 30px; 
+        padding-top: 30px;
     }
 
     form {
@@ -172,4 +184,12 @@ button:active {
         font-size: 1.1em;
         padding: 12px;
     }
+}
+
+footer {
+    background-color: #789ec5;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
 }

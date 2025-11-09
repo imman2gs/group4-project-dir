@@ -4,44 +4,113 @@
     --color-primary-emerald: #009688;
     --color-secondary-sunlight: #ffc107;
     --color-dark-emerald: #00564d;
-    
     --color-login-button: #789ec5;
     --color-link-hover: #5088c7;
-    
     --glass-bg-color: rgba(255, 255, 255, 0.2); 
     --glass-border-color: rgba(255, 255, 255, 0.6);
     --glass-blur: 20px;
+
+:root {
+    --color-primary-emerald: #00a878;
+    --color-secondary-sunlight: #ffc658; 
+    --color-dark-emerald: #007a56;
+    --color-light-background-start: rgba(255, 255, 255, 0.95);
+    --color-light-background-end: rgba(240, 248, 255, 0.9);
 }
 
 body, html {
-    height: 100%;
     margin: 0;
+    font-family: 'Inter', sans-serif; 
+    color: var(--color-dark-emerald); 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    /* Using Inter for modern, clean typography */
     font-family: 'Inter', sans-serif; 
     color: var(--color-dark-emerald); 
     overflow: hidden; 
 }
 
 .login-container {
-    height: 100%;
+    flex: 1; 
+    
     width: 100%;
+    
+    background-size: 110%; 
+    background-repeat: no-repeat; 
+    background-image: url('kayangan_lake_coron.jpg');
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center; 
     align-items: center; 
     position: relative;
     
-    background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/45/09/2c/kayangan-lake-dubbed.jpg?w=1200&h=-1&s=1');
+    padding: 40px 0;
+    box-sizing: border-box; 
+    
+    background-image: url('https://a0.muscache.com/im/pictures/INTERNAL/INTERNAL-ImageByPlaceId-ChIJEfqjPuomlDMRevfQkx9Q-6U-large_background/original/fd8f6b23-e76b-46b6-8ede-57d2559d800d.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     background-color: rgba(0, 0, 0, 0.45); 
     background-blend-mode: darken; 
     
-    animation: simplePan 40s infinite alternate linear; 
+    background-color: rgba(0, 0, 0, 0.45); 
+    background-blend-mode: darken; 
+    
+    animation: simplePan 40s infinite alternate; 
 }
 
 @keyframes simplePan {
-    0% { background-position: center top; }
-    100% { background-position: center bottom; }
+    0% { 
+        background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/45/09/2c/kayangan-lake-dubbed.jpg?w=1200&h=-1&s=1');
+        background-position: center top; 
+    }
+
+    /* End State: Bottom position */
+    100% { 
+        background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/45/09/2c/kayangan-lake-dubbed.jpg?w=1200&h=-1&s=1'); 
+        background-position: center bottom; 
+    }
 }
+
+.login-box {
+    background: linear-gradient(135deg, var(--color-light-background-start), var(--color-light-background-end)); 
+    padding: 45px 50px; 
+    border-radius: 20px; 
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6); 
+    width: 400px; 
+    max-width: 90%; 
+    text-align: center;
+    
+    backdrop-filter: blur(18px); 
+    -webkit-backdrop-filter: blur(18px); 
+    border: 3px solid rgba(255, 255, 255, 0.6); 
+}
+
+.login-box h1 {
+    font-family: 'Georgia', serif; 
+    color: var(--color-primary-emerald);
+    font-size: 2.8em; 
+    margin: 0 0 35px 0; 
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.8); 
+}
+
+    color: #4a5568; 
+    font-size: 1em; 
+    margin-bottom: 20px; 
+    font-style: italic;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: darken;
+    
+}
+
+
+
 
 .login-box {
     padding: 40px 45px; 
@@ -79,6 +148,8 @@ body, html {
 .input-group {
     text-align: left;
     margin-bottom: 20px; 
+    margin-bottom: 22px; 
+    margin-bottom: 20px;
 }
 
 .input-group label {
@@ -177,11 +248,9 @@ body, html {
 }
 
 footer {
-    background-color: #789ec5; /* Solid color matching the requested hex */
+    background-color: #789ec5;
     color: white;
     text-align: center;
-    padding: 20px 0; /* Updated padding */
-    font-size: 0.9rem; /* Updated font size */
-    width: 100%;
-    /* Removed: position: fixed; bottom: 0; left: 0; z-index: 5; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
+    padding: 20px 0;
+    font-size: 0.9rem;
 }
