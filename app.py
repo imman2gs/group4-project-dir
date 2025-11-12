@@ -1,28 +1,29 @@
 from flask import Flask, render_template
+from dotenv import load_dotenv
+from config import Config
+from models.db import db
+from models.user_model import User
+from flask_migrate import Migrate
+
+load_dotenv()
 
 app = Flask(__name__)
+app.config.from_object(Config)
 
-# --- WELCOME PAGE ROUTE ---
-# This handles the main website address (e.g., http://127.0.0.1:5000/)
+db.init_app(app)
+migrate = Migrate(app, db)
+
 @app.route('/')
 def welcome():
-    # Renders the 'welcome.html' file (your Welcome Page)
     return render_template('welcome.html')
 
-# --- LOGIN PAGE ROUTE ---
-# This handles the /login URL (e.g., http://127.0.0.1:5000/login)
 @app.route('/login')
 def login():
-    # Renders the 'login.html' file
     return render_template('login.html')
 
-# --- REGISTER PAGE ROUTE ---
-# This handles the /register URL (e.g., http://127.0.0.1:5000/register)
 @app.route('/register')
 def register():
-    # Renders the 'register.html' file
     return render_template('register.html')
 
 if __name__ == '__main__':
-    # Starts the Flask web server
     app.run(debug=True)
