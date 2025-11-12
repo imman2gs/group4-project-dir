@@ -9,7 +9,12 @@ class User(db.Model):
     lname = db.Column(db.String(50))
     uname = db.Column(db.String(50))
     email = db.Column(db.String(255), unique=True)
-    pass_word= db.Column(db.String(255))    
+    pass_word= db.Column(db.String(255))
+    birthday = db.Column(db.Date) 
+    gender = db.Column(db.String(20))
+    phone_number = db.Column(db.String(20), unique=True)
+    address = db.Column(db.String(255))
+    student_id = db.Column(db.String(50), unique=True)    
     created_at = db.Column(db.DateTime, default=datetime.now(timezone.utc))
     updated_at = db.Column(db.DateTime, default=datetime.now(timezone.utc), onupdate=datetime.now(timezone.utc))
 

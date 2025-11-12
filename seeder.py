@@ -16,6 +16,11 @@ def seed_data():
                     uname="immanuel28",
                     email="immanueltugade28@gmail.com",
                     pass_word=generate_password_hash("admin123"),
+                    birthday="2013-05-15",
+                    gender="male",
+                    phone_number="09994875529",
+                    address="Maunlad St. Brgy.Pinyahan, Quezon City",
+                    student_id="2024-31532-MN0",
                 ),
                 User(
                     fname="Law",
@@ -23,6 +28,11 @@ def seed_data():
                     uname="trafalgarlaw28",
                     email="trafalgarlaw@gmail.com",
                     pass_word=generate_password_hash("password123"),
+                    birthday="2004-12-25",
+                    gender="male",
+                    phone_number="09543645213",
+                    address="Mapagbigay St. Brgy.Santolan, Davao City",
+                    student_id="2023-75345-MN0",
                 )
             ]
 
